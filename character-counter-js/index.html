@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #e8edf3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    main {
+      background: #fff;
+      max-width: 500px;
+      width: 100%;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      color: #22223b;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #d1d5db;
+      border-radius: 10px;
+      resize: vertical;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    textarea.excedido {
+      border-color: #dc2626;
+    }
+
+    .resultados {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tarjeta {
+      flex: 1;
+      min-width: 100px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .tarjeta span {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #22223b;
+    }
+
+    .tarjeta.excedido span {
+      color: #dc2626;
+    }
+
+    .tarjeta p {
+      margin: 4px 0 0;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    button {
+      margin-top: 16px;
+      width: 100%;
+      padding: 10px;
+      background: #22223b;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #3b3b5c;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Contador de Caracteres</h1>
+    <textarea id="texto" placeholder="Escribí acá..."></textarea>
+
+    <div class="resultados">
+      <div class="tarjeta">
+        <span id="caracteres">0</span>
+        <p>Caracteres</p>
+      </div>
+      <div class="tarjeta">
+        <span id="palabras">0</span>
+        <p>Palabras</p>
+      </div>
+      <div class="tarjeta">
+        <span id="sinEspacios">0</span>
+        <p>Sin espacios</p>
+      </div>
+      <div class="tarjeta" id="tarjetaRestantes">
+        <span id="restantes">280</span>
+        <p>Restan</p>
+      </div>
+    </div>
+
+    <button id="limpiar">Limpiar</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
